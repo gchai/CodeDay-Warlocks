@@ -49,7 +49,7 @@ class Bullet(pygame.sprite.Sprite):
         # Call the parent class (Sprite) constructor
         super(Bullet, self).__init__()
  
-        self.image = pygame.Surface([4, 10])
+        self.image = pygame.image.load('fireball.png')
         self.image.fill(BLACK)
  
         self.rect = self.image.get_rect()
