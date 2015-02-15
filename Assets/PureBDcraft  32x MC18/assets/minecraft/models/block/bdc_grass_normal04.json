@@ -1,0 +1,11 @@
+{
+	"__comment": "Designed by Sphax for PureBDcraft - http://bdcraft.net",
+    "parent": "block/grass",
+    "textures": {
+        "particle": "blocks/dirt",
+        "bottom": "blocks/dirt",
+        "top": "blocks/grass_top",
+        "side": "blocks/bdc_grass_side04",
+        "overlay": "blocks/grass_side_overlay"
+    }
+}

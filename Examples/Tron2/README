@@ -1,0 +1,56 @@
+The game is currently not finished.
+CAI.py holds all the ai files for the vehicles that have been constructed. Only the LightBike of CLightBike.py and the Car of CCar.py function fully right now.
+The Jet and the Tank will be developed soon, and the next additions to the game will be powerups which grant the vehicle that picks it up the power to use a special secondary ability. 
+
+for now, run Menu.py using the python interpreter in the terminal. the menu will ask for the number of human and ai players, and you can choose your colors via the terminal. For a single player experience, run TronCopy.py which is an older version which uses a list of points instead of actual lines. the goal is to rebuild this in a much more object oriented manner.
+
+
+
+
+
+PyTron Readme
+
+anticipated Modes: 
+  Adventure:
+    1-2 local screen scrolls with character, has map, must pick up certain
+      objects
+  Score Attack:
+    1 can choose vehicle and color. Ends when hp -> 0
+    2-4 local/online(^4) choose vehicle and color. Ends when all have died. 
+    records high score
+  Battle:
+    2-4 local/online only. start with x hp, die when hp -> 0. 
+      teams possible. must have same color though.
+  Switch:
+    1-4 local/online. choose color, vehicles( and thus powers) switch between levels. 
+    variant of Score Attack.
+  Bosshunter:
+    1-4 local/online. choose vehicle and color. all players work together to destroy Ship boss.
+  Beatdown:
+    2-4 local/online only. choose winning points condition. invincibility frames
+      after getting hit. players earn points by destroying enemies, lose points if
+      hit. no powers, all have same vehicles, choose color. choose # enemies. 
+  Survival:
+    2-4 local/online only. choose 
+  VARIANT OPTIONS:
+    (dis)allow side warping, (dis)allow all powers and powerups, sudden death. 
+    
+    
+Characters:
+
+  playable ones include:
+    LightCycle - speedx1, jump (represented by invincibility frames for 3 sec and not drawing lines)
+    FighterJet - speedx1.2, Laser (represented by laser at relSpeedx3, deletes relsizex3 of lines it hits. laser dies after 6 line hits.)
+    Tank - speedx.9, Derezz (represented by missile at Speedx3, damagesx2 anything it hits. lasts for 2 secs.)
+      note: when it moves, collide with things in between location and last location)
+    Car - speedx1.2, dash (1/4 damage for 1 sec, move at relSpeedx3 while invincible)
+    
+  Bosses:
+    Ship - speedx.5, double lines (think = sign), lines are 3/4 line limit in size.
+              recover (slowly recover .1 hp every sec)
+              Derezz (recharges every 15 secs)
+              damaged only by powers.
+              doesn't recover when on a line
+    Towers - static, no lines, takes damage from collision with a vehicle or weapon.
+              Derezz (recharges every 8 secs)
+      

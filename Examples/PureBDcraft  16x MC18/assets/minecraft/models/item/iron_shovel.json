@@ -1,0 +1,19 @@
+{
+	"__comment": "Designed by Sphax for PureBDcraft - http://bdcraft.net",
+    "parent": "builtin/generated",
+    "textures": {
+        "layer0": "items/iron_shovel"
+    },
+    "display": {
+		"thirdperson": {
+			"rotation": [ 0, 90, -40 ],
+			"translation": [ 0, 0.7, -2 ],
+			"scale": [ 1.2, 1.2, 1.2 ]
+		},
+        "firstperson": {
+            "rotation": [ 0, -135, 60 ],
+            "translation": [ 0, 4, 2 ],
+            "scale": [ 1.7, 1.7, 1.7 ]
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+"__comment": "Designed by Sphax with BDcraft Cubik PRO 0.90 Beta - http://bdcraft.net",
+"ambientocclusion": false,
+"textures": {
+    "particle": "blocks/glass",
+    "pane": "blocks/glass"
+},
+"elements": [ 
+{
+    "from": [ 7, 0, 0 ],
+    "to": [ 9, 16, 16 ],
+    "faces": {
+        "down":  { "uv": [ 15.75, 0, 16, 16 ], "texture": "#pane", "cullface": "down" },
+        "up":    { "uv": [ 15.75, 0, 16, 16 ], "texture": "#pane", "cullface": "up" },
+        "north": { "uv": [ 15.75, 0, 16, 16 ], "texture": "#pane", "cullface": "north" },
+        "south": { "uv": [ 15.75, 0, 16, 16 ], "texture": "#pane", "cullface": "south" },
+        "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#pane" },
+        "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#pane" }
+    }
+}
+]
+}

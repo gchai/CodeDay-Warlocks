@@ -1,0 +1,110 @@
+{
+"__comment": "Designed by Sphax with Cubik for PureBDcraft - http://bdcraft.net",
+"ambientocclusion": false,
+"textures": {
+    "particle": "blocks/door_iron_lower",
+    "door": "blocks/door_iron_lower"
+},
+"elements": [ 
+{
+    "from": [ 0.75, 12.75, 0 ],
+    "to": [ 2.25, 16, 3.5 ],
+    "faces": {
+        "south": { "uv": [ 12.5, 0, 13.75, 1.5 ], "texture": "#door" }
+    }
+},
+{
+    "from": [ 0.25, 12.25, 9.5 ],
+    "to": [ 1, 16, 10.25 ],
+    "faces": {
+        "down":  { "uv": [ 9.5, 0.5, 10.25, 0 ], "texture": "#door" },
+        "north": { "uv": [ 10.25, 0, 9.5, 3.25 ], "texture": "#door" },
+        "south": { "uv": [ 9.5, 0, 10.25, 3.25 ], "texture": "#door" },
+        "west":  { "uv": [ 9.5, 0, 10.25, 3.25 ], "texture": "#door" },
+        "east":  { "uv": [ 10.25, 0.75, 9.5, 3 ], "texture": "#door" }
+    }
+},
+{
+    "from": [ 0.25, 12.25, 6 ],
+    "to": [ 1, 16, 6.75 ],
+    "faces": {
+        "down":  { "uv": [ 6, 0.5, 6.75, 0 ], "texture": "#door" },
+        "north": { "uv": [ 6.75, 0, 6, 3.25 ], "texture": "#door" },
+        "south": { "uv": [ 6, 0, 6.75, 3.25 ], "texture": "#door" },
+        "west":  { "uv": [ 6, 0, 6.75, 3.25 ], "texture": "#door" },
+        "east":  { "uv": [ 6.75, 1, 6, 2.75 ], "texture": "#door" }
+    }
+},
+{
+    "from": [ 0.75, 12.75, 12.5 ],
+    "to": [ 2.25, 16, 16 ],
+    "faces": {
+        "north": { "uv": [ 12.5, 0, 13.75, 1 ], "texture": "#door" }
+    }
+},
+{
+    "from": [ 2, 12.25, 9.5 ],
+    "to": [ 2.75, 16, 10.25 ],
+    "faces": {
+        "down":  { "uv": [ 9.5, 0.5, 10.25, 0 ], "texture": "#door" },
+        "north": { "uv": [ 10.25, 0, 9.5, 3.25 ], "texture": "#door" },
+        "south": { "uv": [ 9.5, 0, 10.25, 3.25 ], "texture": "#door" },
+        "west":  { "uv": [ 9.5, 1, 10.25, 2.75 ], "texture": "#door" },
+        "east":  { "uv": [ 10.25, 0, 9.5, 3.25 ], "texture": "#door" }
+    }
+},
+{
+    "from": [ 2, 12.25, 6 ],
+    "to": [ 2.75, 16, 6.75 ],
+    "faces": {
+        "down":  { "uv": [ 6, 0.5, 6.75, 0 ], "texture": "#door" },
+        "north": { "uv": [ 6.75, 0, 6, 3.25 ], "texture": "#door" },
+        "south": { "uv": [ 6, 0, 6.75, 3.25 ], "texture": "#door" },
+        "west":  { "uv": [ 6, 0.75, 6.75, 3 ], "texture": "#door" },
+        "east":  { "uv": [ 6.75, 0, 6, 3.25 ], "texture": "#door" }
+    }
+},
+{
+    "from": [ 0.75, 12.75, 0 ],
+    "to": [ 2.25, 16, 5.5 ],
+    "faces": {
+        "north": { "uv": [ 0, 2, 0.5, 4.5 ], "texture": "#door" },
+        "west":  { "uv": [ 0, 0, 5.75, 3.25 ], "texture": "#door" },
+        "east":  { "uv": [ 5.75, 0, 0, 3.25 ], "texture": "#door" }
+    }
+},
+{
+    "from": [ 0.75, 12.75, 10.75 ],
+    "to": [ 2.25, 16, 16 ],
+    "faces": {
+        "south": { "uv": [ 0, 2, 1, 4.5 ], "texture": "#door" },
+        "west":  { "uv": [ 10.75, 0, 16, 3.25 ], "texture": "#door" },
+        "east":  { "uv": [ 16, 0, 10.75, 3.25 ], "texture": "#door" }
+    }
+},
+{
+    "from": [ 0.75, 0, 0 ],
+    "to": [ 2.25, 12.75, 16 ],
+    "faces": {
+        "down":  { "uv": [ 0, 2, 1, 4.5 ], "texture": "#door" },
+        "up":    { "uv": [ 12.5, 0, 13.75, 1 ], "texture": "#door" },
+        "north": { "uv": [ 0, 3.25, 0.5, 16 ], "texture": "#door" },
+        "south": { "uv": [ 0, 2, 1, 4.5 ], "texture": "#door" },
+        "west":  { "uv": [ 0, 3.25, 16, 16 ], "texture": "#door" },
+        "east":  { "uv": [ 16, 3.25, 0, 16 ], "texture": "#door" }
+    }
+},
+{
+    "from": [ 0, 4.5, 0 ],
+    "to": [ 3, 7.5, 1.5 ],
+    "faces": {
+        "down":  { "uv": [ 0, 8.5, 0.5, 11.5 ], "texture": "#door" },
+        "up":    { "uv": [ 0, 8.5, 0.5, 9 ], "texture": "#door" },
+        "north": { "uv": [ 0, 8.5, 0.5, 11.5 ], "texture": "#door" },
+        "south": { "uv": [ 1, 11, 1.5, 11.5 ], "texture": "#door" },
+        "west":  { "uv": [ 0, 8.5, 1.5, 11.5 ], "texture": "#door" },
+        "east":  { "uv": [ 0, 8.5, 1.5, 11.5 ], "texture": "#door" }
+    }
+}
+]
+}
