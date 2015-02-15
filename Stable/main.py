@@ -24,8 +24,16 @@ class Human(pygame.sprite.Sprite):
 
 		self.currentSpritesheet = human_idle_down_strips
 
-		self.x_dist = 10
-		self.y_dist = 10
+		self.x_dist = 12
+		self.y_dist = 12
+		self.x_momentum = 0
+		self.x_momentumInc = 2
+		self.x_momentumDec = 1.5
+		self.x_momentumDecay = .5
+		self.y_momentum = 0
+		self.y_momentumInc = 2
+		self.y_momentumDec = 1.5
+		self.y_momentumDecay = .5
 
 	def move(self, keylist, prevkey):
 		xMove = 0;
@@ -33,18 +41,30 @@ class Human(pygame.sprite.Sprite):
 
 		if keylist[K_UP]:
 			self.y += -self.y_dist
+			self.y_momentum += self.y_momentumInc
+			self.y += -self.y_momentum
+			self.y_momentum -= self.y_momentumDec
 			if prevkey != K_UP:
 				self.currentSpritesheet = human_walking_up_strips
 		if keylist[K_DOWN]:
 			self.y += self.y_dist
+			self.y_momentum += -self.y_momentumInc
+			self.y += -self.y_momentum
+			self.y_momentum -= -self.y_momentumDec
 			if prevkey != K_DOWN:
 				self.currentSpritesheet = human_walking_down_strips
 		if keylist[K_RIGHT]:
 			self.x += self.x_dist
+			self.x_momentum += self.x_momentumInc
+			self.x += self.x_momentum
+			self.x_momentum -= self.x_momentumDec
 			if prevkey != K_RIGHT:
 				self.currentSpritesheet = human_walking_right_strips
 		if keylist[K_LEFT]:
 			self.x += -self.x_dist
+			self.x_momentum += -self.x_momentumInc
+			self.x += self.x_momentum
+			self.x_momentum -= -self.x_momentumDec
 			if prevkey != K_LEFT:
 				self.currentSpritesheet = human_walking_left_strips
 		return self.currentSpritesheet
@@ -79,11 +99,13 @@ class Skeleton(pygame.sprite.Sprite):
 		self.x_dist = 12
 		self.y_dist = 12
 		self.x_momentum = 0
-		self.x_momentumInc = 3
-		self.x_momentumDec = 1
+		self.x_momentumInc = 2
+		self.x_momentumDec = 1.5
+		self.x_momentumDecay = .5
 		self.y_momentum = 0
-		self.y_momentumInc = 3
-		self.y_momentumDec = 1
+		self.y_momentumInc = 2
+		self.y_momentumDec = 1.5
+		self.y_momentumDecay = .5
 
 	def move(self, keylist, prevkey):
 		xMove = 0;
@@ -94,7 +116,6 @@ class Skeleton(pygame.sprite.Sprite):
 			self.y_momentum += self.y_momentumInc
 			self.y += -self.y_momentum
 			self.y_momentum -= self.y_momentumDec
-			print self.y_momentum
 			if prevkey != K_w:
 				self.currentSpritesheet = skeleton_walking_up_strips
 		if keylist[K_s]:
@@ -106,16 +127,16 @@ class Skeleton(pygame.sprite.Sprite):
 				self.currentSpritesheet = skeleton_walking_down_strips
 		if keylist[K_d]:
 			self.x += self.x_dist
-			self.x_momentum += -self.x_momentumInc
-			self.x += -self.x_momentum
-			self.x_momentum -= -self.x_momentumDec
+			self.x_momentum += self.x_momentumInc
+			self.x += self.x_momentum
+			self.x_momentum -= self.x_momentumDec
 			if prevkey != K_d:
 				self.currentSpritesheet = skeleton_walking_right_strips
 		if keylist[K_a]:
 			self.x += -self.x_dist
-			self.x_momentum += self.x_momentumInc
+			self.x_momentum += -self.x_momentumInc
 			self.x += self.x_momentum
-			self.x_momentum -= self.x_momentumDec
+			self.x_momentum -= -self.x_momentumDec
 			if prevkey != K_a:
 				self.currentSpritesheet = skeleton_walking_left_strips
 		return self.currentSpritesheet
@@ -131,13 +152,40 @@ class Skeleton(pygame.sprite.Sprite):
 			self.currentSpritesheet = skeleton_idle_left_strips
 		return self.currentSpritesheet
 
+	# def loseMomentum(self):
+	# 	if self.x_momentum > 0:
+	# 		self.x -= self.x_momentum
+	# 		if self.x_momentumDecay > self.x_momentum:
+	# 			self.x_momentum = 0
+	# 		else:
+	# 			self.x_momentum -= self.x_momentumDecay
+	# 	elif self.x_momentum < 0:
+	# 		self.x += self.x_momentum
+	# 		if self.x_momentumDecay > self.x_momentum:
+	# 			self.x_momentum = 0
+	# 		else:
+	# 			self.x_momentum += self.x_momentumDecay
+		
+	# 	if self.y_momentum > 0:
+	# 		self.y -= self.y_momentum
+	# 		if self.y_momentumDecay > self.y_momentum:
+	# 			self.y_momentum = 0
+	# 		else:
+	# 			self.y_momentum -= self.y_momentumDecay
+	# 	elif self.y_momentum < 0:
+	# 		self.y += self.y_momentum
+	# 		if self.y_momentumDecay > self.y_momentum:
+	# 			self.y_momentum = 0
+	# 		else:
+	# 			self.y_momentum += self.y_momentumDecay
+
 	def coord(self):
 		return (self.x, self.y)
 	def getCurrentSpritesheet(self):
 		return self.currentSpritesheet
 
 def main():
-	FPS = 200
+	FPS = 60
 	frames = FPS / 12
 	black = Color('black')
 	white = Color('white')
@@ -169,6 +217,8 @@ def main():
 	    			prevkey1 = e.key
 	    			image2 = player2.stop(e.key, prevkey2)
 	    			prevkey2 = e.key
+	    # player1.loseMomentum()
+	    # player2.loseMomentum()
 	    image1 = player1.getCurrentSpritesheet()
 	    image1 = image1.next()
 

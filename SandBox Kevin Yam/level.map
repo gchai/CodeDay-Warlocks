@@ -4,13 +4,13 @@ tileset = GroundLava.png
 #16 by 12
 map = llllllllllllllll
       lnlllnnnnlllllll
-      llllnnnnnlllllll
-      lllnnnnnnlllllll
+      llllnnnnnnnlnnll
+      lllnnnnnnnnlllll
       lllnnnnnnnnnnlll
       llnnnnnnnnnnnnll
       lllnnnnnnnllllll
       lllllnnnlllnllll
-      lllllnnnnnnnllll
+      lllnnnnnnnnnllll
       lnnnnnnnnnllllll
       lllllnnnnnllllll
       llllllllllllllll
@@ -34,7 +34,7 @@ block = false
 name = lava
 tile = 1, 1
 sprite = lava_still.png
-block = false
+block = true
 
 [n]
 name = ground

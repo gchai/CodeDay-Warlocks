@@ -12,12 +12,20 @@ clock = pygame.time.Clock()
 max_fps = 60
  
 body = pygame.image.load('1.png')
-armor = pygame.image.load('2.png')
-body.blit(armor, (0, 0))
+head = pygame.image.load('2.png')
+leg = pygame.image.load('3.png')
+torso = pygame.image.load('4.png')
+hands = pygame.image.load('5.png')
+feet = pygame.image.load('6.png')
+body.blit(head, (0, 0))
+body.blit(leg, (0, 0))
+body.blit(torso, (0, 0))
+body.blit(hands, (0, 0))
+body.blit(feet, (0, 0))
  
 frames = []
 rect = Rect(0, 0, 64, 64)
-for x in range(0, 64 * 9, 64):
+for x in range(0, 64 * 13, 64):
     im = pygame.Surface((64, 64))
     im.blit(body, (0, 0), rect.move(x, 0))
     frames.append(im)
