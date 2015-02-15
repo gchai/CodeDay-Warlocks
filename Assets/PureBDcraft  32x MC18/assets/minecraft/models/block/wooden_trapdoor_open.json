@@ -1,7 +1,0 @@
-{
-	"__comment": "Designed by Sphax for PureBDcraft - http://bdcraft.net",
-    "parent": "block/trapdoor_open",
-    "textures": {
-        "texture": "blocks/trapdoor"
-    }
-}
