@@ -2,7 +2,7 @@ import sys
 import pygame
 from pygame.locals import *
 import spritesheet
-
+ 
 class SpriteStripAnim(object):
     def __init__(self, filename, rect, count, colorkey=None, loop=False, frames=1):
         self.filename = filename
@@ -36,9 +36,7 @@ class SpriteStripAnim(object):
 # FPS = 120
 # frames = FPS / 12
 # strips = [
-#     SpriteStripAnim('BODY_skeleton.png', (64,192,64,64), 9, 1, True, frames)
-#     #SpriteStripAnim('BODY_skeleton.png', (0,64,64,64), 5, 1, True, frames),
-#     #SpriteStripAnim('BODY_skeleton.png', (0,128,64,64), 5, 1, True, frames)
+#     SpriteStripAnim('body_skeleton.png', (64,192,64,64), 8, 1, True, frames)
 # ]
 # black = Color('black')
 # clock = pygame.time.Clock()
