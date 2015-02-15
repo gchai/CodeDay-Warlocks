@@ -4,16 +4,16 @@ tileset = GroundLava.png
 #16 by 12
 map = llllllllllllllll
       lnlllnnnnlllllll
-      llllnnnnnnnlnnll
+      lnnnnnnnnnnlnnll
       lllnnnnnnnnlllll
       lllnnnnnnnnnnlll
       llnnnnnnnnnnnnll
       lllnnnnnnnllllll
-      lllllnnnlllnllll
+      lllllnnnnnlnllll
       lllnnnnnnnnnllll
       lnnnnnnnnnllllll
       lllllnnnnnllllll
-      lllllllllllllll
+      llllllllllllllll
 
 [.]
 name = floor

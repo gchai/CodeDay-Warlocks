@@ -47,6 +47,8 @@ class Human(pygame.sprite.Sprite):
 		self.y_momentumDec = 1.5
 		self.y_momentumDecay = .5
 
+		self.alive = True
+
 	def move(self, keylist, prevkey):
 		xMove = 0;
 		yMove = 0;
@@ -118,6 +120,8 @@ class Skeleton(pygame.sprite.Sprite):
 		self.y_momentumInc = 2
 		self.y_momentumDec = 1.5
 		self.y_momentumDecay = .5
+
+		self.alive = True
 
 	def move(self, keylist, prevkey):
 		xMove = 0;
@@ -312,7 +316,7 @@ def main():
 		overlay.image = image
 		overlay.rect = image.get_rect().move(x * 24, y * 16 - 16)
 
-	player1 = Human(0, 0)
+	player1 = Human(100, 100)
 	player2 = Skeleton(500, 500)
 
 	prevkey1 = ""
@@ -329,6 +333,12 @@ def main():
 					prevkey1 = e.key
 					image2 = player2.move(keys, prevkey2)
 					prevkey2 = e.key
+				if level.get_tile(int(player1.x/64), int(player1.y/64))["name"] == "lava":
+					player1.currentSpritesheet = dying_strips
+					player1.alive = False
+				if level.get_tile(int(player2.x/64), int(player2.y/64))["name"] == "lava":
+					player2.currentSpritesheet = skeleton_dying_strips
+					player2.alive = False
 			elif e.type == KEYUP:
 				if e.key == K_ESCAPE:
 					sys.exit()
@@ -348,7 +358,18 @@ def main():
 		surface.fill(black)
 		surface.blit(background, (0, 0))
 		overlays.draw(surface)
-		surface.blit(image1, player1.coord())
+		if player1.alive:
+			surface.blit(image1, player1.coord())
+		else:
+			image1 = dying_strips.iter()
+			image1 = image1.next()
+			surface.blit(image1, player1.coord())
+		if player2.alive:
+			surface.blit(image2, player2.coord())
+		else:
+			image2 = skeleton_dying_strips.iter()
+			image2 = image2.next()
+			surface.blit(image2, player2.coord())
 		surface.blit(image2, player2.coord())
 		pygame.display.flip()
 		clock.tick(FPS)

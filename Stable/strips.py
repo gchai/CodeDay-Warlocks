@@ -43,7 +43,10 @@ skeleton_walking_down_strips = SpriteStripAnim('skeleton_walking.png', (0,128,64
 
 
 #Dying:
-dying_strips = SpriteStripAnim('death.png', (0,0,64,64), 6, -1, True, frames)
+dying_strips = SpriteStripAnim('death.png', (256,0,64,64), 1, -1, True, frames)
+
+#skeletondeath
+skeleton_dying_strips = SpriteStripAnim('skeleton_death.png', (256,0,64,64), 1, -1, True, frames)
 
 
 
