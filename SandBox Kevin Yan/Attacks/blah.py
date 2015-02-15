@@ -1,7 +1,8 @@
 
 import pygame
 import random
- 
+from sprite_strip_anim import SpriteStripAnim
+
 # Define some colors
 BLACK    = (   0,   0,   0)
 WHITE    = ( 255, 255, 255)
@@ -49,8 +50,29 @@ class Bullet(pygame.sprite.Sprite):
         # Call the parent class (Sprite) constructor
         super(Bullet, self).__init__()
  
-        self.image = pygame.image.load('fireball.png')
-        self.image.fill(BLACK)
+        strips = [
+            SpriteStripAnim('fireball.png', (0,0,64,64), 8, 1, True, frames)
+        ]
+        black = Color('black')
+        clock = pygame.time.Clock()
+        n = 0
+        strips[n].iter()
+        image = strips[n].next()
+        while True:
+            for e in pygame.event.get():
+                if e.type == KEYUP:
+                    if e.key == K_ESCAPE:
+                        sys.exit()
+                    elif e.key == K_RETURN:
+                        n += 1
+                        if n >= len(strips):
+                            n = 0
+                        strips[n].iter()
+            surface.fill(black)
+            surface.blit(image, (0,0))
+            pygame.display.flip()
+            image = strips[n].next()
+            clock.tick(FPS)
  
         self.rect = self.image.get_rect()
  
